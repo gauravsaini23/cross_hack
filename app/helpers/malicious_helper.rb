@@ -1,0 +1,2 @@
+module MaliciousHelper
+end

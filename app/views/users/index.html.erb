@@ -1,0 +1,17 @@
+Your name is <%= @user.name  %>, email is <%= @user.email %>
+<br/>
+<%= form_for @post do |f| %>
+  <%= f.text_area :content %>
+  <%= f.hidden_field :user_id %>
+  <br/>
+  <%= f.submit "Create Post" %>
+<% end %>
+
+<hr>
+  <h2>Your Feed</h2>
+
+<% Post.all.each do |post| %>
+  <h3><%= post.user.name %></h3>
+  <%= post.content.html_safe %>
+  <hr>
+<% end %>
